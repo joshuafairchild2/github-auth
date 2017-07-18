@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
   providers: [AuthenticationService]
 })
 export class AppComponent {
-  private user: Observable<firebase.User>;
-  private isLoggedIn: boolean;
-  private displayName: string;
+  user: Observable<firebase.User>;
+  isLoggedIn: boolean;
+  displayName: string;
 
   constructor(
     public authService: AuthenticationService,
