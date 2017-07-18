@@ -9,12 +9,8 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./public.component.css']
 })
 export class PublicComponent {
-  private user: User;
 
   constructor() { }
 
-  ngDoCheck() {
-    this.user = firebase.auth().currentUser;
-  }
 
 }
