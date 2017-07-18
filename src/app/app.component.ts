@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +16,13 @@ export class AppComponent {
   private displayName: string;
 
   constructor(
-    public authService: AuthenticationService
+    public authService: AuthenticationService,
+    private router: Router
   ) {
     this.authService.user.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
+        this.router.navigate(['public']);
       } else {
         this.isLoggedIn = true;
         this.displayName = user.displayName;
