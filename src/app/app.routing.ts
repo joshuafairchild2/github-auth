@@ -7,8 +7,7 @@ import { AuthGuard } from './auth-guard.service';
 const appRoutes: Routes = [
   {
     path: 'public',
-    component: PublicComponent,
-    canActivate: [AuthGuard]
+    component: PublicComponent
   },
   {
     path: 'private',
